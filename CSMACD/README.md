@@ -7,7 +7,7 @@
       - collision이 발생되었을 경우 랜덤한 시간(Tb)만큼 Wait후 재전송
   ---
 
-*CSMACD.py*
+[*CSMACD.py*](https://github.com/yannJu/ComputerNetwork/blob/master/CSMACD/CSMACD.py)
 ###  **실행방법**
 - 파일 실행 후 커맨드창에 limit(재전송 횟수)와 Tfr(Wait Time)을 입력
 - 랜덤하게 transmission과 collision이 발생

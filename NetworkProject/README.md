@@ -36,7 +36,7 @@
 
 ---
 
-*Sender.py & Receiver.py*
+[*Sender.py*](https://github.com/yannJu/ComputerNetwork/blob/master/NetworkProject/Sender.py) & [*Receiver.py*](https://github.com/yannJu/ComputerNetwork/blob/master/NetworkProject/Receiver.py)
 ###  **실행방법**
 1. 두개의 커맨드창(혹은 터미널)을 엶
 2. Receiver.py를 먼저 실행
@@ -45,3 +45,44 @@
 5. 제대로 전송되고 ACK가 반환되어 출력되는지 확인
    
 #현재 **bypass및 Err가 없는 상황**임을 가정하에 구현
+
+---
+
+[*Application.py*](https://github.com/yannJu/ComputerNetwork/blob/master/NetworkProject/Application.py)
+  
+  Application Layer에서 호출
+
+    Client : Msg를 입력받음
+    Server : 전송받은 Msg를 화면에 출력
+
+---
+[*StopAndWait.py*](https://github.com/yannJu/ComputerNetwork/blob/master/NetworkProject/StopAndWait.py)
+
+Tranport Layer에서 호출
+
+    Client : Client처럼 사용될 경우 Msg 혹은 AckMsg를 전송
+    Server : Server처럼 사용될 경우 Ack와 Packet이 제대로 왔는지 비교 및 화면 출력
+
+---
+[*bitStuff_Unstuff.py*](https://github.com/yannJu/ComputerNetwork/blob/master/NetworkProject/bitStuff_Unstuff.py)
+
+Datalink Layer에서 호출
+
+    Client : bitStuffing을 통해 bitStream에 ESC를 추가하여 구분지음
+    Server : bitUnStuffing을 통해 ESC를 제거하고 구분지음
+
+---
+[*CSMACD.py*](https://github.com/yannJu/ComputerNetwork/blob/master/NetworkProject/CSMACD.py)
+
+Datalink Layer 중 Client 입장일 경우 호출
+
+    메시지 전송을 위해 CSMACD를 이용
+    이때, Collision은 없다고 가정하며 무조건 Transmission이 된다고 가정 (즉 bypass)
+
+---
+[*MLT3.py*](https://github.com/yannJu/ComputerNetwork/blob/master/NetworkProject/MLT3.py)
+
+Physical Layer 에서 호출
+
+    Client : bitStream을 디지털 신호로 변환
+    Server : 변환된 신호를 다시 bitStream으로 변환
